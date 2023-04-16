@@ -1,6 +1,6 @@
 <template>
   <v-app dark>
-    <v-app-bar :clipped-right="clipped" fixed app>
+    <v-app-bar :clipped-left="clipped" fixed app class="elevation-0">
       <v-spacer />
       <v-hover v-slot="{ hover }">
         <NuxtLink

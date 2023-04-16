@@ -24,13 +24,11 @@
         </v-list-item>
       </v-list>
     </v-navigation-drawer>
-    <v-app-bar :clipped-left="clipped" fixed app class="elevation-0">
-      <!-- <v-app-bar-nav-icon @click.stop="drawer = !drawer" /> -->
-
+    <v-app-bar :clipped-right="clipped" fixed app>
       <v-spacer />
       <v-hover v-slot="{ hover }">
         <NuxtLink
-          to="/calculators/opt-cpt"
+          to="/"
           class="text-decoration-none"
           :style="{ color: hover ? 'blue' : 'black' }"
         >
@@ -39,7 +37,7 @@
       </v-hover>
       <v-hover v-slot="{ hover }">
         <NuxtLink
-          to="/calculators/opt-cpt"
+          to="/students"
           class="text-decoration-none ma-3"
           :style="{ color: hover ? 'blue' : 'black' }"
         >
@@ -48,7 +46,7 @@
       </v-hover>
       <v-hover v-slot="{ hover }">
         <NuxtLink
-          to="/calculators/opt-cpt"
+          to="/feedback"
           class="text-decoration-none"
           :style="{ color: hover ? 'blue' : 'black' }"
         >
@@ -57,7 +55,7 @@
       </v-hover>
       <v-hover v-slot="{ hover }">
         <NuxtLink
-          to="/calculators/opt-cpt"
+          to="/settings"
           class="text-decoration-none ma-3"
           :style="{ color: hover ? 'blue' : 'black' }"
         >
@@ -66,7 +64,7 @@
       </v-hover>
       <v-hover v-slot="{ hover }">
         <NuxtLink
-          to="/calculators/opt-cpt"
+          to="/logout"
           class="text-decoration-none"
           :style="{ color: hover ? 'blue' : 'black' }"
         >
