@@ -194,17 +194,17 @@ export default {
         {
           title: "OPT-CPT",
           icon: "mdi-account-circle",
-          link: "/calculators/opt-cpt",
+          link: "/calculators/opt-Cpt",
         },
         {
           title: "OPT-STEM",
           icon: "mdi-shield-refresh-outline",
-          link: "/calculators/opt-stem",
+          link: "/calculators/opt-Stem",
         },
         {
           title: "OPT-App Deadline",
           icon: "mdi-palette-outline",
-          link: "/calculators/opt-app",
+          link: "/calculators/opt-App",
         },
         {
           title: "Acacdemic Training",
