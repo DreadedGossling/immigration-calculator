@@ -1,18 +1,18 @@
 <template>
   <v-col cols="12">
     <v-row>
-      <v-col cols="6" sm="10" md="10 d-flex justify-space-between mb-6" lg="6">
+      <v-col cols="12" lg="6">
         <v-form>
           <v-container>
             <v-row>
-              <v-col cols="8" sm="8" md="8">
+              <v-col cols="8">
                 <v-text-field
                   model-value="John Doe"
                   label="Name"
                   outlined
                 ></v-text-field
               ></v-col>
-              <v-col cols="4" sm="4" md="4">
+              <v-col cols="4">
                 <v-btn
                   block
                   height="55"
@@ -21,7 +21,7 @@
                   >New Student</v-btn
                 >
               </v-col>
-              <v-col cols="8" sm="8" md="8">
+              <v-col cols="8">
                 <v-text-field
                   model-value="John Doe"
                   label="Email"
@@ -30,7 +30,7 @@
                 ></v-text-field>
               </v-col>
               <v-col cols="auto"> </v-col>
-              <v-col cols="4" sm="4" md="4">
+              <v-col cols="4">
                 <v-text-field
                   model-value="John Doe"
                   label="Program Start Date"
@@ -38,7 +38,7 @@
                   class="mt-n8"
                 ></v-text-field>
               </v-col>
-              <v-col cols="4" sm="4" md="4">
+              <v-col cols="4">
                 <v-text-field
                   model-value="John Doe"
                   label="Program End Date"
@@ -46,7 +46,7 @@
                   class="mt-n8"
                 ></v-text-field>
               </v-col>
-              <v-col cols="4" sm="4" md="4">
+              <v-col cols="4">
                 <v-btn
                   block
                   height="55"
@@ -59,7 +59,7 @@
           </v-container>
         </v-form>
       </v-col>
-      <v-col cols="6" sm="10" md="10" lg="6" class="mb-md-6 mb-sm-6">
+      <v-col cols="12" lg="6" class="mb-md-6 mb-sm-6">
         <div class="pa-4 elevation-1">
           <v-sheet>
             <h3 class="mb-4">Date Calculator</h3>
@@ -78,20 +78,21 @@
                   @click="toggle()"
                 >
                   <!-- {{ isActive ? "-" : "+" }} -->
-                  {{ isActive ? "-" : "+"}}
+                  {{ isActive ? "-" : "+" }}
                 </button>
               </div>
               <div id="set">
                 <v-sheet class="d-flex justify-space-around mb-6 px-4">
                   <div>
-                    <v-select :items="items" label="30" outlined></v-select>
+                    <v-select :items="items" value="30" outlined></v-select>
                   </div>
                   <div class="mt-4 px-2">Days</div>
                 </v-sheet>
               </div>
               <div class="text-h2 px-4">=</div>
-              <div>
-                <v-text-field model-value="" label="03/04/2023"></v-text-field>
+              <div class="mt-4">
+                <span class="text-h5 px-2">03/04/2023</span>
+                <!-- <v-text-field model-value="" label="03/04/2023"></v-text-field> -->
               </div>
             </div>
           </v-sheet>
@@ -142,7 +143,7 @@ export default {
   data() {
     return {
       isActive: false,
-      items: [10, 20, 30, 40, 50],
+      items: [5, 10, 15, 20, 25, 30],
     };
   },
   methods: {
@@ -156,5 +157,8 @@ export default {
 <style scoped>
 #set {
   width: 20%;
+}
+span {
+  border-bottom: 1px solid black;
 }
 </style>

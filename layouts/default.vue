@@ -1,11 +1,29 @@
 <template>
   <v-app dark>
-    <v-app-bar :clipped-left="clipped" fixed app class="elevation-0">
+    <v-app-bar :clipped-right="clipped" fixed app>
       <v-spacer />
-      <v-hover v-slot="{ hover }">
+
+      <v-app-bar-nav-icon
+        @click="drawer = true"
+        class="d-flex d-sm-none"
+      ></v-app-bar-nav-icon>
+
+      <v-hover v-slot="{ hover }"
+      v-for="(item) in menu"
+            :key="item.title">
         <NuxtLink
-          to="/calculators/opt-cpt"
-          class="text-decoration-none"
+          :to="item.link"
+          class="text-decoration-none font-weight-medium ma-2 d-none d-sm-flex text-lg-subtitle-1 text-sm-subtitle-2"
+          :style="{ color: hover ? '#1E88E5' : 'black' }"
+        >
+          {{item.title}}
+        </NuxtLink>
+      </v-hover>
+
+      <!-- <v-hover v-slot="{ hover }">
+        <NuxtLink
+          to="/"
+          class="text-decoration-none d-none d-md-flex"
           :style="{ color: hover ? 'blue' : 'black' }"
         >
           Calculators
@@ -13,7 +31,7 @@
       </v-hover>
       <v-hover v-slot="{ hover }">
         <NuxtLink
-          to="/calculators/opt-cpt"
+          to="/students"
           class="text-decoration-none ma-3"
           :style="{ color: hover ? 'blue' : 'black' }"
         >
@@ -22,7 +40,7 @@
       </v-hover>
       <v-hover v-slot="{ hover }">
         <NuxtLink
-          to="/calculators/opt-cpt"
+          to="/feedback"
           class="text-decoration-none"
           :style="{ color: hover ? 'blue' : 'black' }"
         >
@@ -31,7 +49,7 @@
       </v-hover>
       <v-hover v-slot="{ hover }">
         <NuxtLink
-          to="/calculators/opt-cpt"
+          to="/settings"
           class="text-decoration-none ma-3"
           :style="{ color: hover ? 'blue' : 'black' }"
         >
@@ -40,14 +58,36 @@
       </v-hover>
       <v-hover v-slot="{ hover }">
         <NuxtLink
-          to="/calculators/opt-cpt"
+          to="/logout"
           class="text-decoration-none"
           :style="{ color: hover ? 'blue' : 'black' }"
         >
           Logout
         </NuxtLink>
-      </v-hover>
+      </v-hover> -->
     </v-app-bar>
+
+    <v-navigation-drawer v-model="drawer" absolute temporary
+      height="auto">
+      <v-list nav dense>
+        <v-list-item-group>
+          <v-list-item
+            v-for="(item, index) in menu"
+            :key="item.title"
+            active-color="#1E88E5"
+            class="mt-2"
+          >
+          <NuxtLink
+          :to="item.link"
+          class="text-decoration-none ma-3 black--text font-weight-medium">
+            <v-list-item-title @click="tab = index">{{
+              item.title
+            }}</v-list-item-title></NuxtLink>
+          </v-list-item>
+        </v-list-item-group>
+      </v-list>
+    </v-navigation-drawer>
+
     <v-main>
       <v-container>
         <Nuxt />
@@ -69,9 +109,16 @@ export default {
       drawer: false,
       fixed: false,
       miniVariant: false,
-      right: true,
-      rightDrawer: false,
+      left: true,
+      leftDrawer: false,
       title: "Vuetify.js",
+      menu: [
+        { title: "Calculators", link: "/" },
+        { title: "Students", link: "/students" },
+        { title: "Feedback", link: "/feedback" },
+        { title: "Settings", link: "/settings" },
+        { title: "Logout", link: "/logout" },
+      ],
     };
   },
 };

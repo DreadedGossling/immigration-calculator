@@ -10,7 +10,7 @@ import BasicCalci from '../../components/basicCalci.vue';
           <v-row>
             <v-col cols="6" sm="6" md="6"> </v-col>
             <v-col cols="6" sm="6" md="6">
-              <h3 class="font-weight-medium text-right">
+              <h3 class="font-weight-medium text-right text-sm-left">
                 OPT Prohibited by CPT <span v-if="truth"><b
                   class="green--text"
                   >NO</b></span>
@@ -27,7 +27,7 @@ import BasicCalci from '../../components/basicCalci.vue';
     <hr />
     <v-col cols="12">
       <v-row>
-        <v-col cols="6" sm="10" md="10" lg="6">
+        <v-col cols="12" lg="6">
           <h3 class="font-weight-medium">Part Time CPT</h3>
           <v-list>
             <v-list-item id="bgsilver">
@@ -151,15 +151,17 @@ import BasicCalci from '../../components/basicCalci.vue';
                 <v-col cols="3" sm="3" md="3" class="font-weight-medium"
                   ><v-text-field
                     model-value=""
-                    label="03/04/2023"
+                    value="03/04/2023"
                     outlined
+                    disabled
                   ></v-text-field>
                 </v-col>
                 <v-col cols="3" sm="3" md="3" class="font-weight-medium"
                   ><v-text-field
                     model-value=""
-                    label="03/04/2023"
+                    value="03/04/2023"
                     outlined
+                    disabled
                   ></v-text-field>
                 </v-col>
                 <v-col
@@ -252,15 +254,17 @@ import BasicCalci from '../../components/basicCalci.vue';
                 <v-col cols="3" sm="3" md="3" class="font-weight-medium"
                   ><v-text-field
                     model-value=""
-                    label="03/04/2023"
+                    value="03/04/2023"
                     outlined
+                    disabled
                   ></v-text-field>
                 </v-col>
                 <v-col cols="3" sm="3" md="3" class="font-weight-medium"
                   ><v-text-field
                     model-value=""
-                    label="03/04/2023"
+                    value="03/04/2023"
                     outlined
+                    disabled
                   ></v-text-field>
                 </v-col>
                 <v-col
@@ -307,7 +311,7 @@ import BasicCalci from '../../components/basicCalci.vue';
             </v-row>
           </v-list-item> -->
         </v-col>
-        <v-col cols="6" sm="10" md="10" lg="6">
+        <v-col cols="12" lg="6">
           <h3 class="font-weight-medium">Previous Part Time OPT</h3>
           <v-list>
             <v-list-item id="bgsilver">
@@ -381,15 +385,17 @@ import BasicCalci from '../../components/basicCalci.vue';
                 <v-col cols="3" sm="3" md="3" class="font-weight-medium"
                   ><v-text-field
                     model-value=""
-                    label="03/04/2023"
+                    value="03/04/2023"
                     outlined
+                    disabled
                   ></v-text-field>
                 </v-col>
                 <v-col cols="3" sm="3" md="3" class="font-weight-medium"
                   ><v-text-field
                     model-value=""
-                    label="03/04/2023"
+                    value="03/04/2023"
                     outlined
+                    disabled
                   ></v-text-field>
                 </v-col>
                 <v-col
@@ -463,15 +469,17 @@ import BasicCalci from '../../components/basicCalci.vue';
                 <v-col cols="3" sm="3" md="3" class="font-weight-medium"
                   ><v-text-field
                     model-value=""
-                    label="03/04/2023"
+                    value="03/04/2023"
                     outlined
+                    disabled
                   ></v-text-field>
                 </v-col>
                 <v-col cols="3" sm="3" md="3" class="font-weight-medium"
                   ><v-text-field
                     model-value=""
-                    label="03/04/2023"
+                    value="03/04/2023"
                     outlined
+                    disabled
                   ></v-text-field>
                 </v-col>
                 <v-col

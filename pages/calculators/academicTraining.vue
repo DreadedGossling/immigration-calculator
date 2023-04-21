@@ -5,7 +5,7 @@
     <hr />
     <v-col cols="12" class="mt-4">
       <v-row>
-        <v-col cols="6" sm="10" md="10" lg="6">
+        <v-col cols="12" lg="6">
           <v-list>
             <v-list-item>
               <v-row>
@@ -15,8 +15,9 @@
                 <v-col cols="4" sm="4" md="4">
                   <v-text-field
                     model-value=""
-                    label="03/04/2023"
+                    value="03/04/2023"
                     outlined
+                    readonly
                   ></v-text-field
                 ></v-col>
               </v-row>
@@ -30,8 +31,9 @@
                 <v-col cols="2" sm="2" md="2">
                   <v-text-field
                     model-value=""
-                    label="18"
+                    value="18"
                     outlined
+                    readonly
                   ></v-text-field
                 ></v-col>
               </v-row>
@@ -43,8 +45,12 @@
                 </v-col>
                 <v-spacer></v-spacer>
                 <v-col cols="2" sm="2" md="2" class="max-width">
-                  <v-text-field model-value="" label="18"></v-text-field
-                ></v-col>
+                  <!-- <v-text-field model-value="" label="18"></v-text-field
+                > -->
+                <div class="text-right">
+                <span class="px-4">18</span>
+              </div>
+              </v-col>
               </v-row>
             </v-list-item>
             <v-list-item>
@@ -54,8 +60,12 @@
                 </v-col>
                 <v-spacer></v-spacer>
                 <v-col cols="2" sm="2" md="2">
-                  <v-text-field model-value="" label="1"></v-text-field
-                ></v-col>
+                  <!-- <v-text-field model-value="" label="1"></v-text-field
+                > -->
+                <div class="text-right">
+                <span class="px-4">1</span>
+              </div>
+              </v-col>
               </v-row>
             </v-list-item>
             <v-list-item>
@@ -64,13 +74,17 @@
                   <h4>Next AT End Date</h4>
                 </v-col>
                 <v-col cols="4" sm="4" md="4">
-                  <v-text-field model-value="" label="03/04/2023"></v-text-field
-                ></v-col>
+                  <!-- <v-text-field model-value="" label="03/04/2023"></v-text-field
+                > -->
+                <div class="text-right">
+                <span class="px-4">03/04/2023</span>
+              </div>
+              </v-col>
               </v-row>
             </v-list-item>
           </v-list>
         </v-col>
-        <v-col cols="6" sm="10" md="10" lg="6">
+        <v-col cols="12" lg="6">
           <v-list>
             <v-list-item id="bgsilver">
               <v-row>
@@ -165,15 +179,17 @@
                 <v-col cols="3" sm="3" md="3" class="font-weight-medium"
                   ><v-text-field
                     model-value=""
-                    label="03/04/2023"
+                    value="03/04/2023"
                     outlined
+                    disabled
                   ></v-text-field>
                 </v-col>
                 <v-col cols="3" sm="3" md="3" class="font-weight-medium"
                   ><v-text-field
                     model-value=""
-                    label="03/04/2023"
+                    value="03/04/2023"
                     outlined
+                    disabled
                   ></v-text-field>
                 </v-col>
                 <v-col
@@ -247,5 +263,8 @@ export default {
   height: 10%;
   background-color: rgba(225, 220, 220, 0.716);
   padding: 2%;
+}
+span {
+border-bottom: 1px solid black;
 }
 </style>

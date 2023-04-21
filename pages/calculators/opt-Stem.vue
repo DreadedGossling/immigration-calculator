@@ -5,7 +5,7 @@
     <hr />
     <v-col cols="12" class="mt-4">
       <v-row>
-        <v-col cols="6" sm="10" md="10" lg="6">
+        <v-col cols="12" lg="6">
           <v-list>
             <v-list-item>
               <v-row>
@@ -15,43 +15,52 @@
                 <v-col cols="4" sm="4" md="4">
                   <v-text-field
                     model-value=""
-                    label="03/04/2023"
+                    value="03/04/2023"
                     outlined
+                    disabled
                   ></v-text-field
                 ></v-col>
               </v-row>
             </v-list-item>
             <v-list-item>
               <v-row class="mt-n8">
-                <v-col cols="8" sm="8" md="8">
+                <v-col cols="8">
                   <p>STEM OPT Start Date</p>
                 </v-col>
-                <v-col cols="4" sm="4" md="4">
-                  <v-text-field
+                <v-col cols="4">
+                  <!-- <v-text-field
                     model-value=""
                     label="03/04/2023"
                     class="mt-n4"
                   ></v-text-field
-                ></v-col>
+                > -->
+                <div class="text-right">
+                <span class="px-4">03/04/2023</span>
+              </div>
+              </v-col>
               </v-row>
             </v-list-item>
             <v-list-item>
               <v-row class="mt-n8">
-                <v-col cols="8" sm="8" md="8">
+                <v-col cols="8">
                   <p>STEM OPT End Date</p>
                 </v-col>
-                <v-col cols="4" sm="4" md="4">
-                  <v-text-field
+                <v-col cols="4">
+                  <!-- <v-text-field
                     model-value=""
                     label="03/04/2023"
                     class="mt-n4"
                   ></v-text-field
-                ></v-col>
+                > -->
+                <div class="text-right">
+                <span class="px-4">03/04/2023</span>
+              </div>
+              </v-col>
               </v-row>
             </v-list-item>
           </v-list>
         </v-col>
-        <v-col cols="6" sm="10" md="10" lg="6">
+        <v-col cols="12" lg="6">
           <v-list>
             <span>
               <h3 id="bgsilver">Six-Month Reporting Period</h3>
@@ -177,7 +186,7 @@ export default {
   background-color: rgba(225, 220, 220, 0.716);
   padding: 2%;
 }
-#bgred {
-  background-color: yellow;
+span {
+border-bottom: 1px solid black;
 }
 </style>

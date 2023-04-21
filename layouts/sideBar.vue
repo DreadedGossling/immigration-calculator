@@ -26,7 +26,22 @@
     </v-navigation-drawer>
     <v-app-bar :clipped-right="clipped" fixed app>
       <v-spacer />
-      <v-hover v-slot="{ hover }">
+
+      <v-app-bar-nav-icon
+        @click="too = true"
+        class="d-flex d-sm-none"
+      ></v-app-bar-nav-icon>
+
+      <v-hover v-slot="{ hover }" v-for="item in menu" :key="item.title">
+        <NuxtLink
+          :to="item.link"
+          class="text-decoration-none font-weight-medium ma-2 d-none d-sm-flex text-lg-subtitle-1 text-sm-subtitle-2"
+          :style="{ color: hover ? '#1E88E5' : 'black' }"
+        >
+          {{ item.title }}
+        </NuxtLink>
+      </v-hover>
+      <!-- <v-hover v-slot="{ hover }">
         <NuxtLink
           to="/"
           class="text-decoration-none"
@@ -70,8 +85,50 @@
         >
           Logout
         </NuxtLink>
-      </v-hover>
+      </v-hover> -->
     </v-app-bar>
+
+    <v-navigation-drawer v-model="too" absolute temporary height="auto">
+      <v-list nav dense>
+        <v-list-item-group>
+          <v-list-item
+            v-for="(item, index) in menu"
+            :key="item.title"
+            active-color="#1E88E5"
+            class="mt-2"
+          >
+            <NuxtLink
+              :to="item.link"
+              class="text-decoration-none ma-3 black--text font-weight-medium"
+            >
+              <v-list-item-title @click="tab = index">{{
+                item.title
+              }}</v-list-item-title></NuxtLink
+            >
+          </v-list-item>
+
+          <v-list-item>
+            <v-menu :offset-y="5" open-on-hover close-on-content-click>
+              <template v-slot:activator="{ on }">
+                <v-btn color="grey darken-3" text v-on="on">
+                  <v-icon left>mdi-calculator</v-icon>Calculators
+                  <v-icon right>mdi-chevron-down</v-icon>
+                </v-btn>
+              </template>
+              <v-list>
+                <v-list-item
+                  v-for="(item, index) in calculators"
+                  :key="index"
+                  :href="item.link"
+                >
+                  <v-list-item-title> {{ item.title }}</v-list-item-title>
+                </v-list-item>
+              </v-list>
+            </v-menu>
+          </v-list-item>
+        </v-list-item-group>
+      </v-list>
+    </v-navigation-drawer>
 
     <v-main>
       <v-container>
@@ -101,8 +158,17 @@ export default {
   data() {
     return {
       clipped: false,
-      // drawer: false,
+      too: false,
       fixed: false,
+      right: true,
+      rightDrawer: false,
+      menu: [
+        { title: "Calculators", link: "/" },
+        { title: "Students", link: "/students" },
+        { title: "Feedback", link: "/feedback" },
+        { title: "Settings", link: "/settings" },
+        { title: "Logout", link: "/logout" },
+      ],
       items: [
         // {
         //   title: "Calculators",
@@ -122,6 +188,28 @@ export default {
         {
           title: "Academic Training",
           to: "/calculators/academicTraining",
+        },
+      ],
+      calculators: [
+        {
+          title: "OPT-CPT",
+          icon: "mdi-account-circle",
+          link: "/calculators/opt-cpt",
+        },
+        {
+          title: "OPT-STEM",
+          icon: "mdi-shield-refresh-outline",
+          link: "/calculators/opt-stem",
+        },
+        {
+          title: "OPT-App Deadline",
+          icon: "mdi-palette-outline",
+          link: "/calculators/opt-app",
+        },
+        {
+          title: "Acacdemic Training",
+          icon: "mdi-palette-outline",
+          link: "/calculators/academicTraining",
         },
       ],
       miniVariant: false,

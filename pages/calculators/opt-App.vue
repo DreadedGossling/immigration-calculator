@@ -5,7 +5,7 @@
     <hr />
     <v-col cols="12" class="mt-4">
       <v-row>
-        <v-col cols="6" sm="10" md="10" lg="6">
+        <v-col cols="12" lg="6">
           <v-row class="pa-2">
             <v-col cols="8" sm="8" md="8">
               <p>Requested OPT Start Date</p>
@@ -13,13 +13,14 @@
             <v-col cols="4" sm="4" md="4">
               <v-text-field
                 model-value=""
-                label="03/04/2023"
+                value="03/04/2023"
                 outlined
+                readonly
               ></v-text-field
             ></v-col>
           </v-row>
         </v-col>
-        <v-col cols="6" sm="10" md="10" lg="6">
+        <v-col cols="12" lg="6">
           <v-list>
             <span>
               <h3 id="bgsilver">Important Dates</h3>
